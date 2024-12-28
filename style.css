@@ -21,6 +21,7 @@ body {
 
 .profile, .contact-card {
     display: flex;
+    flex-wrap: wrap; /* 允许子元素换行 */
     align-items: center;
     margin-bottom: 20px;
     padding: 20px;
@@ -38,6 +39,9 @@ body {
 
 .profile-details, .contact-details {
     font-size: 16px;
+    word-wrap: break-word; /* 允许长单词换行 */
+    overflow-wrap: break-word; /* 兼容不同浏览器 */
+    text-align: left; /* 防止居中导致内容超出 */
 }
 
 p {
