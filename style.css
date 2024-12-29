@@ -1,54 +1,90 @@
-/* styles.css 文件 */
+/* 通用样式 */
 body {
     font-family: Arial, sans-serif;
-    background-image: url('background.jpg');
+    background-image: url('background3.png');
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    background-size: cover;
+    background-position: center;
 }
 
 .container {
-    width: 80%;
-    max-width: 800px;
-    background-color: white;
-    padding: 20px 20px 0px 20px;
+    width: 90%;
+    max-width: 600px; /* 手机上缩小最大宽度 */
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
+/* 卡片布局 */
 .profile, .contact-card {
     display: flex;
-    flex-wrap: wrap; /* 允许子元素换行 */
+    flex-wrap: wrap; /* 子元素自动换行 */
+    flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
-    padding: 20px;
-    background-color: #d3d3d3;
+    padding: 15px;
+    background-color: rgba(245, 245, 245, 0.7); /* 更浅的背景色适合手机显示 */
     border-radius: 10px;
+    text-align: center; /* 手机端文字居中 */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
+/* 图片样式 */
 .profile-image, .contact-image {
-    width: 200px;
-    height: 200px;
+    width: 120px; /* 缩小图片宽度 */
+    height: 120px;
     border-radius: 10px;
-    margin-right: 20px;
+    margin: 10px auto; /* 居中图片 */
     object-fit: cover;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
+/* 文本样式 */
 .profile-details, .contact-details {
-    font-size: 16px;
-    word-wrap: break-word; /* 允许长单词换行 */
-    overflow-wrap: break-word; /* 兼容不同浏览器 */
-    text-align: left; /* 防止居中导致内容超出 */
+    font-size: 14px; /* 缩小字体适应手机 */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-align: center; /* 手机端文字居中 */
 }
 
 p {
     margin: 5px 0;
+    text-align: center;
 }
 
-p2 {
-    font-size:36px;
-    margin: 5px 0;
+.owner-name {
+    font-size: 24px; /* 调整主要标题的字体大小 */
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* 响应式设计 */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px; /* 缩小容器内边距 */
+    }
+
+    .profile, .contact-card {
+        padding: 10px; /* 缩小卡片内边距 */
+    }
+
+    .profile-image, .contact-image {
+        width: 100px; /* 进一步缩小图片尺寸 */
+        height: 100px;
+    }
+
+    .profile-details, .contact-details {
+        font-size: 12px; /* 缩小文字以适配小屏幕 */
+    }
+
+    .owner-name {
+        font-size: 20px; /* 调整标题字体 */
+    }
 }
